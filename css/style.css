@@ -351,18 +351,18 @@ pre {
 
 .triangle {
   display: inline-block;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent; 
+  border-bottom: 7px solid transparent;
 }
 
 .left .triangle {
-  border-right: 11px solid rgba(255, 255, 255, 0.7);; 
+  border-right: 11px solid rgba(255, 255, 255, 0.7);;
 }
 
 .right .triangle {
-  border-left: 11px solid rgba(255, 255, 255, 0.7);; 
+  border-left: 11px solid rgba(255, 255, 255, 0.7);;
 }
 
 button {
@@ -657,3 +657,15 @@ button:not(.disabled):hover {
   line-height: 1;
 }
 
+.input {
+  display: inline-block;
+  padding: 1px 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  user-select: none;
+  border: none;
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}

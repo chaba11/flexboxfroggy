@@ -125,7 +125,7 @@ var game = {
       var $instructions = $('#instructions');
       var height = $instructions.height();
       $instructions.css('height', height);
-      
+
       if (game.difficulty == 'hard' || game.difficulty == 'medium') {
         $instructions.slideUp();
       } else {
@@ -447,6 +447,9 @@ var game = {
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
+  },
+  sendAnswers: function() {
+
   }
 };
 
