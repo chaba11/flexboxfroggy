@@ -133,8 +133,24 @@ var game = {
       }
     });
 
-    $('#sendAnswers').on('change', function() {
-      console.log("Mande")
+    $('#sendAnswers').on('submit', function() {
+      game.saveAnswer();
+
+      const passphrase = 'anima';
+      const url = window.URL.createObjectURL(new Blob([
+        `Nivel actual: ${game.level}`,
+        `\n`,
+        `Respuestas: ${CryptoJS.AES.encrypt(JSON.stringify(game.answers), passphrase).toString()}`,
+        `\n`,
+        `Niveles terminados: ${CryptoJS.AES.encrypt(JSON.stringify(game.solved), passphrase).toString()}`,
+        `\n`,
+        game.user],
+      {type: "text/plain;charset=utf-8"}));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `felxboxFroggy.txt`);
+      document.body.appendChild(link);
+      link.click();
     });
 
     $('#colorblind').on('change', function() {
