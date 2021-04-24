@@ -140,9 +140,9 @@ var game = {
       const url = window.URL.createObjectURL(new Blob([
         `Nivel actual: ${game.level}`,
         `\n`,
-        `Respuestas: ${CryptoJS.AES.encrypt(JSON.stringify(game.answers), passphrase).toString()}`,
+        `Respuestas: ${CryptoJS.AES.encrypt(JSON.stringify(game.answers) + game.user, passphrase).toString()}`,
         `\n`,
-        `Niveles terminados: ${CryptoJS.AES.encrypt(JSON.stringify(game.solved), passphrase).toString()}`,
+        `Niveles terminados: ${CryptoJS.AES.encrypt(JSON.stringify(game.solved) + game.user, passphrase).toString()}`,
         `\n`,
         game.user],
       {type: "text/plain;charset=utf-8"}));
