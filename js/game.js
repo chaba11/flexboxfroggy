@@ -133,6 +133,10 @@ var game = {
       }
     });
 
+    $('#sendAnswers').on('change', function() {
+      console.log("Mande")
+    });
+
     $('#colorblind').on('change', function() {
       game.colorblind = $('input:checked', '#colorblind').val();
 
@@ -448,9 +452,7 @@ var game = {
       if (callNow) func.apply(context, args);
     };
   },
-  sendAnswers: function() {
 
-  }
 };
 
 $(document).ready(function() {
